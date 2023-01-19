@@ -1,3 +1,9 @@
+:root {
+    --bg-color: hsl(223, 19%, 93%);
+    --buttons-color: hsl(238, 40%, 52%);
+    --secondary-color: hsl(239, 57%, 85%);
+}
+
 *,
 *::before,
 *::after {
@@ -5,33 +11,252 @@
 }
 
 html {
-    font-size: 18px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh; */
 }
 
 main {
     background: lightblue;
     height: 100%;
     width: 100%;
+    background-color: var(--bg-color);
 }
 
 
 /* Other features come above this one. */
-.wrapper-for-user {
+.notification-wrapper {
     display: flex;
+    padding: 1rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
+    gap: 2rem;
+    /* height: 100%; */
+    width: 100%;
 }
 
 .wrapper-for-user form {
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: center;
     gap: .5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    /* width: 100%; */
+}
+
+
+.wrapper-for-user,
+.wrapper-for-comments {
+    border-radius: 10px;
+    /* background: white; */
+    width: 50%;
+    max-width: 750px;
+}
+
+.wrapper-for-user {
+    padding: .2rem;
+}
+
+.wrapper-for-comments {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.user-image img,
+.person img,
+img.user-image,
+.special {
+    height: 30px;
+    object-fit: cover;
+}
+
+.text-field textarea,
+.for-typing {
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    width: 100%;
+}
+
+/* The reply button. */
+
+button.reply {
+    background: none;
+    display: flex;
+    gap: .4rem;
+    cursor: pointer;
+    border: 0;
+    color: #5357B6;
+    padding: 0;
+    margin: 0;
+}
+
+button.send,
+button.sender {
+    border: 0;
+    padding: .7rem .9rem;
+    border-radius: 5px;
+}
+
+/* THE COMMENTS SECTION, FROM THE FIRST PERSON. */
+.comment-box,
+.grid1,
+section.new-boxes {
+    /* padding: .9rem; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .7rem;
+    width: 100%;
+}
+
+.comment-box,
+section.new-boxes {
+    border-radius: 10px;
+    padding: 1rem;
+    background: white;
+}
+
+.grid1 {
+    max-width: 100%;
+}
+
+.added {
+    justify-content: flex-start;
+}
+
+/* THE BUTTONS. */
+.vote,
+.replies-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+}
+
+#display,
+#you-display,
+.display {
+    font-weight: 600;
+    color: var(--buttons-color)
+}
+
+.vote {
+    background: var(--bg-color);
+    padding: .5rem .3rem;
+    border-radius: 10px;
+}
+
+.plus,
+.minus {
+    cursor: pointer;
+    border: 0;
+    background: none;
+}
+
+/* THE USER COMMENT'S STRUCTURE. */
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .7rem;
+    flex-grow: 1;
+}
+
+.grid1 {
+    padding: 0;
+    align-items: flex-start;
+}
+
+.person {
+    display: flex;
+    justify-content: space-evenly;
+    gap: .6rem;
+    align-items: flex-start;
+}
+
+.created {
+    margin: 0;
+}
+
+.comment {
+    max-width: 65ch;
+    margin: 0;
+    line-height: 1.4;
+    /* padding-left: 2px; */
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.reply-container {
+    display: flex;
+    gap: 2rem;
+    padding: 0 0 0 1.05rem;
+    justify-content: space-between;
+}
+
+.reply-container>img {
+    height: 150px;
+}
+
+.line-divider {
+    /* min-height: 300px; */
+    width: 3px;
+}
+
+.line-divider img {
+    width: 100%;
+    height: 100%;
+    /* min-height: 600px; */
+    object-fit: cover;
+    filter: invert(1);
+}
+
+/* The Tag that shows that it's your comment. */
+.you {
+    background: var(--buttons-color);
+    padding: 0 .4rem .2rem .4rem;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    font-size: smaller;
+    border-radius: 2px;
+}
+
+/* The Comment Box */
+.comment-box {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+/* For the Reply Box, after clicking on a button. */
+.custom {
+    display: flex;
+    background: white;
+    gap: .9rem;
+    border-radius: 10px;
+    /* width: 50%; */
+    align-items: flex-start;
+    padding: .9rem;
+    justify-content: space-evenly;
+}
+
+/* THE FOOTER ATTRIBUTION */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }

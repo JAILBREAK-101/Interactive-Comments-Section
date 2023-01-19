@@ -1,29 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <title>INTERACTIVE COMMENT SECTION - CRUD APP</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>INTERACTIVE COMMENT SECTION - CRUD APP</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
 
-  
-  
-  <!-- Credentials -->
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">JailBreak</a>.
-  </div>
+  <!-- MAIN CODE -->
+  <main>
+    <div class="notification-wrapper">
+
+      <!-- <div id="comments" class="comments">
+          <div class="comment-box">
+              <div class="vote">
+                  <button class="plus">+</button>
+                  <span id="display">0</span>
+                  <button class="minus">-</button>
+              </div> 
+
+              ONLY FUNCTIONALITY BUTTONS AVAILABLE. -->
+
+      <!-- THE COMMENTS SECTION  -->
+
+      <div id="dynamic" class="wrapper-for-comments dynamic">
+
+        <!-- From this one, we create our other comments. -->
+        <div class="comment-box default-comment">
+          <div class="vote">
+            <button class="plus"></button>
+            <span id="display">0</span>
+            <button class="minus"></button>
+          </div>
+
+          <div class="details">
+            <section class="header">
+
+              <div class="grid1">
+                <section class="person">
+                  <!-- <img src="/images/avatars/image-amyrobson.png" alt=""> -->
+                  <img src="" alt="">
+                  <strong class="name"></strong>
+                  <p class="created"></p>
+                </section>
+
+                <button class="reply"><img src="./images/icon-reply.svg" alt="" class="reply send">
+                  Reply</button>
+              </div>
+
+              <div class="grid2 comment">
+                <!-- The comment comes in here -->
+                <!-- <textarea name="comment" id="comment" cols="65" rows="5"></textarea> -->
+                <p class="comment"></p>
+
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- The other ones would be derived from the one above. -->
+
+        <div class="comment-box comment-box2 default-comment">
+          <section class="vote">
+            <button class="plus"></button>
+            <span id="display">0</span>
+            <button class="minus"></button>
+          </section>
+
+          <section class="details">
+            <section class="header">
+
+
+              <div class="grid1">
+                <section class="person">
+                  <!-- <img src="/images/avatars/image-amyrobson.png" alt=""> -->
+                  <img class="max" src="" alt="">
+                  <strong class="name"></strong>
+                  <p class="created"></p>
+                </section>
+
+                <button class="reply"><img src="./images/icon-reply.svg" alt="" class="reply send">
+                  Reply</button>
+              </div>
+
+              <div class="grid2 comment">
+                <!-- The comment comes in here -->
+                <!-- <textarea name="comment" id="comment" cols="65" rows="5"></textarea> -->
+                <p class="comment"></p>
+
+              </div>
+            </section>
+          </section>
+        </div>
+
+        <!-- IT'S CHILDREN AS THE REPLY (THE STRUCTURE.) -->
+        <div class="reply-container default-comment">
+          <div class="line-divider">
+            <!-- image divider comes here. -->
+            <img src="./images/vertical-line-svgrepo-com.svg" alt="">
+          </div>
+
+          <div class="replies-wrapper">
+
+
+            <!-- THE REPLY BOX (dynamic). -->
+            <div class="replies comment-box">
+              <section class="vote">
+                <button class="plus"></button>
+                <span id="display">0</span>
+                <button class="minus"></button>
+              </section>
+
+              <section class="details">
+                <section class="header">
+
+                  <div class="grid1">
+                    <section class="person">
+                      <!-- <img src="/images/avatars/image-amyrobson.png" alt=""> -->
+                      <img class="ram" src="" alt="">
+                      <strong class="name"></strong>
+                      <p class="created"></p>
+                    </section>
+
+                    <button class="reply"><img src="./images/icon-reply.svg" alt="" class="reply send">
+                      Reply</button>
+                  </div>
+
+                  <div class="grid2 comment">
+                    <!-- The comment comes in here -->
+                    <!-- <textarea name="comment" id="comment" cols="65" rows="5"></textarea> -->
+                    <p class="comment" id="comment"><span class="at"></span></p>
+
+                  </div>
+                </section>
+              </section>
+            </div>
+
+            <!-- THE USER'S COMMENT. -->
+            <div class="replies comment-box default-comment">
+              <section class="vote">
+                <button class="plus"></button>
+                <span id="you-display">0</span>
+                <button class="minus"></button>
+              </section>
+
+              <section class="details">
+                <section class="header">
+
+                  <div class="grid1">
+                    <section class="person">
+                      <!-- <img src="/images/avatars/image-amyrobson.png" alt=""> -->
+                      <img src="" alt="" id="julio_image">
+                      <strong class="name"></strong>
+                      <span class="you"></span>
+                      <p class="created"></p>
+                    </section>
+
+                    <section class="action-btn">
+                      <button class="action"><img src="" alt="" class="delete"></button>
+
+                      <button class="action"><img src="" alt="" class="edit"></button>
+                    </section>
+
+                    <!-- EDIT AND DELETE, FOR EVERYTIME I CREATE AND REPLY TO A COMMENT. -->
+                  </div>
+
+                  <div class="grid2 comment">
+                    <!-- The comment comes in here -->
+                    <!-- <textarea name="comment" id="comment" cols="65" rows="5"></textarea> -->
+                    <p class="comment" id="you"><span class="at bold-text"></span></p>
+
+                  </div>
+                </section>
+              </section>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!--=== THE ADMIN'S SECTION === -->
+      <!-- The user typing -->
+      <div class="wrapper-for-user">
+        <form action="#">
+          <section class="user-image">
+            <img src="/images/avatars/.image-juliusomo.png" alt="" class="user-image">
+          </section>
+          <section class="text-field">
+            <textarea name="message" id="msg" cols="65" rows="5" placeholder="Add a comment" required></textarea>
+          </section>
+          <button id="send" class="sender" type="submit">Send</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
 </body>
 
-<script type="module" src="./Js/frontend.js"></script>
+<!-- JS FOR THE PROJECT -->
+<script src="./App.js"></script>
+
 </html>

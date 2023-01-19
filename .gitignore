@@ -17,3 +17,6 @@
 
 # Hide the README.md file
 README.md
+
+#Hide JavaScript Folder.
+/Js
