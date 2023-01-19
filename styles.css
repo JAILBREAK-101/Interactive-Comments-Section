@@ -27,6 +27,11 @@ main {
     background-color: var(--bg-color);
 }
 
+/* ALL BUTTONS. */
+button {
+    cursor: pointer;
+}
+
 
 /* Other features come above this one. */
 .notification-wrapper {
