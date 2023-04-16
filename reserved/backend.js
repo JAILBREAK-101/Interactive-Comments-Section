@@ -1,4 +1,4 @@
-import { json as user_data } from "../App";
+import { json as user_data } from "../Js/App";
 
 console.log(user_data);
 

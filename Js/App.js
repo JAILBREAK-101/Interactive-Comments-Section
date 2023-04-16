@@ -83,11 +83,6 @@ let json = {
 /* --------------------------------------------------------------------------------*/
 
 // USERDATA.
-// scripting.
-// FOR THE COUNT OF EACH
-// let count = 0;
-// let value_of_count = document.getElementById('display');
-// let value_of_count2 = document.getElementsByClassName('.display')[1];
 
 let up_button = document.querySelectorAll(".plus");
 let down_button = document.querySelectorAll(".minus");
@@ -452,7 +447,7 @@ function creating_comment_box(send_button, ind) {
 
       let image = document.createElement("img");
       image.classList.add("user-image");
-      image.src = array_of_replies[1].image;
+      image.src = array_of_replies[1].isimage;
 
       var type_area = document.createElement("textarea");
       type_area.classList.add("for-typing");

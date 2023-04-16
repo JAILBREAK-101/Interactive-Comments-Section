@@ -1,32 +1,4 @@
-// USERDATA.
-// scripting.
-const main_container = document.getElementById("comments");
-
-let notification_box = document.querySelector(".comment-box");
-
-const up_vote = document.querySelector(".plus");
-const down_vote = document.querySelector("minus");
-const display = document.getElementById("display");
-
-const reply_button = document.querySelector(".reply");
-
-// The Buttons
-// let count = parseInt(display.innerText);
-
-// up_vote.addEventListener('click', () => {
-// alert("Working");
-// count++;
-//   display.innerText = count++;
-// })
-
-// down_vote.addEventListener('click', () => {
-//   display.innerText = count--;
-// })
-
-// MY FUELER LINK
-// https://fueler.io/Oluwagbemiga
-
-// JSON FILE.
+// REVAMPED FORM OF APP.JS
 let json = {
   // Object 1
   currentUser: {
@@ -35,7 +7,7 @@ let json = {
       webp: "./images/avatars/image-juliusomo.webp",
     },
 
-    username: "juliusomo",
+    username: "gbemiga",
   },
 
   // Object 2
@@ -66,7 +38,7 @@ let json = {
           png: "./images/avatars/image-maxblagun.png",
           webp: "./images/avatars/image-maxblagun.webp",
         },
-        username: "maxblagun",
+        username: "daniel",
       },
 
       // Object 3
@@ -77,7 +49,7 @@ let json = {
             "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
           createdAt: "1 week ago",
           score: 4,
-          replyingTo: "maxblagun",
+          replyingTo: "daniel",
           user: {
             image: {
               png: "./images/avatars/image-ramsesmiron.png",
@@ -100,17 +72,90 @@ let json = {
               png: "./images/avatars/image-juliusomo.png",
               webp: "./images/avatars/image-juliusomo.webp",
             },
-            username: "juliusomo",
+            username: "gbemiga",
           },
         },
       ],
     },
   ],
 };
+// let objectData = new Map((json) => {
+//   console.log(json);
+// });
 
-// GETTING THE CURRENT USER'S DATA FROM THE OBJECT.
-let username = json.currentUser.username;
-let user_image = json.currentUser.image.webp;
+let admin = json.currentUser;
+let comments = json.comments;
+let replies = comments[1].replies;
 
-// For when the user types.
-let user_image_types = json.currentUser.image.png;
+const adminImage = (document.querySelector(".user-image").src =
+  admin.image.png);
+
+let defaultComment = document.querySelectorAll(".default-comment");
+let voteScore = document.querySelectorAll(".default-comment #display");
+let userName = document.querySelectorAll(".default-comment name");
+let images = document.querySelectorAll(".person img");
+let timeCreated = document.querySelectorAll(".default-comment .created");
+let commentContent = document.querySelectorAll(".default-comment .comment");
+let repliesBox = document.querySelector(".reply-container");
+let replyButtons = document.querySelectorAll("button.reply");
+
+let commentData = comments.map((eachComment) => {
+  return {
+    ID: eachComment.id,
+    name: eachComment.user.username,
+    score: eachComment.score,
+    commentContent: eachComment.content,
+    // use timestamps
+    commentCreated: new Date().getTime(),
+    // any comment that gets added will go into the respective data slot
+    replies: eachComment.replies.map((eachReply) => {
+      return {
+        replyID: eachReply.id,
+        replyName: eachReply.user.username,
+        replyImage: eachReply.user.image.png,
+        replyComment: eachReply.content,
+        replyCreated: eachReply.createdAt,
+        replyScores: eachReply.score,
+        replyTo: eachReply.replyingTo,
+      };
+    }),
+  };
+});
+
+// dynamically add data
+
+// comments.forEach((eachComment) => {
+//   voteScore.forEach((score) => {
+//     score.innerText = eachComment.score;
+//   });
+// });
+
+// // for (let i = 0; i <= voteScore.length; i++) {
+// //   for (let j = 0; i<=comments.forEach((value) => {value.score.length}); i++) {
+// //     i
+// //   }
+// // }
+// userName.forEach((name) => {
+//   comments.forEach((eachComment) => {
+//     name.innerText = eachComment.user.name;
+//   });
+// });
+// userName.forEach((name) => {
+//   comments.forEach((eachComment) => {
+//     name.innerText = eachComment.user.name;
+//   });
+// });
+
+// timeCreated.forEach((time) => {});
+
+// commentContent.forEach((comment) => {});
+
+// dynamically add comments
+
+// CRUD - Create
+
+// CRUD - Update
+
+// CRUD - Delete
+
+// Upvote and Downvote
