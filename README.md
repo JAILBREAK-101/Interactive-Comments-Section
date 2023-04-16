@@ -1,12 +1,11 @@
 # Frontend Mentor - Interactive comments section solution
 
-<<<<<<< HEAD
 This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 =======
 Link to Project: https://jailbreak-101.github.io/Interactive-Comments-Section/
 
 This is a solution to the [Interactive comments section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
->>>>>>> 9cb65ab361429387dd2b0075cbbf2d65b0f62bd9
+
 
 ## Table of contents
 
