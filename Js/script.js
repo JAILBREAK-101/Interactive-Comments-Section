@@ -1,4 +1,27 @@
-// REVAMPED FORM OF APP.JS
+// for the socket and joining of our application room
+// import { io } from "socket.io-client";
+
+const form = document.querySelector(".sign-up__form");
+const username = form[".sign-up__username"];
+const password = form[".sign-up__password"];
+
+const commentBox = document.querySelector(".comment__box");
+const commentForm = document.querySelector(".comment__form");
+const commentValue = commentForm["comment"].value;
+const commentButton = document.querySelector(".admin-commment__button");
+
+commentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newComment = document.createElement("div");
+  newComment.innerText = commentValue;
+  commentBox.append(newComment);
+});
+
+// const socket = io("http://localhost:3000");
+// socket.on("connect", () => {
+//   displayComment(`You are connected with this key: ${socket.id}`);
+// });
+
 let json = {
   // Object 1
   currentUser: {
@@ -87,17 +110,8 @@ let admin = json.currentUser;
 let comments = json.comments;
 let replies = comments[1].replies;
 
-const adminImage = (document.querySelector(".user-image").src =
-  admin.image.png);
-
-let defaultComment = document.querySelectorAll(".default-comment");
-let voteScore = document.querySelectorAll(".default-comment #display");
-let userName = document.querySelectorAll(".default-comment name");
-let images = document.querySelectorAll(".person img");
-let timeCreated = document.querySelectorAll(".default-comment .created");
-let commentContent = document.querySelectorAll(".default-comment .comment");
-let repliesBox = document.querySelector(".reply-container");
-let replyButtons = document.querySelectorAll("button.reply");
+// const adminImage = (document.querySelector(".user-image").src =
+//   admin.image.png);
 
 let commentData = comments.map((eachComment) => {
   return {
